@@ -3,7 +3,7 @@ jQuery(document).ready( function($) {
 
     let alreadySpinned = false;
 
-    if (window.localStorage.getItem('lunch') !== 'undefined') {
+    if (window.localStorage.getItem('lunch') && window.localStorage.getItem('lunch') !== 'undefined') {
         var storage = JSON.parse(window.localStorage.getItem('lunch'));
         var date1 = new Date(storage.date);
         var date2 = new Date(d.toLocaleDateString());
@@ -136,6 +136,7 @@ jQuery(document).ready( function($) {
                 window.localStorage.setItem('lunch', JSON.stringify(lunch));
                 $('.result').html('Lounaspaikka tänään: <span style="color:'+sector.color+'">'+sector.label+'</span>');
                 angVel = 0;
+                alreadySpinned = true;
             }
         }
     
