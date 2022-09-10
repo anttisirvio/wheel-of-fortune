@@ -10,7 +10,7 @@ jQuery(document).ready( function($) {
 
         if (date1.getTime() == date2.getTime()) {
             alreadySpinned = true;
-            $('.result').html('Lounaspaikka tänään: <span style="color:'+storage.color+';">'+storage.place+'</span>');
+            $('.result').html(storage.place).css('color', storage.color);
         }
     }
 
@@ -134,7 +134,7 @@ jQuery(document).ready( function($) {
                     color: sector.color
                 }
                 window.localStorage.setItem('lunch', JSON.stringify(lunch));
-                $('.result').html('Lounaspaikka tänään: <span style="color:'+sector.color+'">'+sector.label+'</span>');
+                $('.result').html(sector.label).css('color', sector.color);
                 angVel = 0;
                 alreadySpinned = true;
             }
