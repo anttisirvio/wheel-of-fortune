@@ -1,0 +1,53 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#wheelOfFortune {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#wheel {
+    display: block;
+    border: 3px solid #000000;
+    border-radius: 50%;
+}
+
+#spin {
+    font-size: 1.25rem;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    background: #fff;
+    color: #fff;
+    box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    transition: 0.8s;
+    &::after {
+        content: "";
+        position: absolute;
+        top: -17px;
+        border: 10px solid transparent;
+        border-bottom-color: currentColor;
+        border-top: none;
+    }
+}

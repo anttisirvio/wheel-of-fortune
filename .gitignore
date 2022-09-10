@@ -1,2 +1,4 @@
 .sass-cache*
 config.rb
+assets/css*
+!assets/css/.gitkeep
