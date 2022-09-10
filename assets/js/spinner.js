@@ -91,7 +91,7 @@ jQuery(document).ready( function($) {
         ctx.textAlign = "right";
         ctx.fillStyle = "#fff";
         ctx.font = "bold 12px sans-serif";
-        ctx.fillText(sector.label, rad - 10, 2);
+        ctx.fillText(sector.label, rad - 10, 5);
         //
         ctx.restore();
     };
