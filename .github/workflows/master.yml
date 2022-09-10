@@ -30,8 +30,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: | 
-          mkdir -p /data/wordpress/htdocs/wp-content/themes/eeco-theme-child
-          rm -rf /data/wordpress/htdocs/wp-content/themes/eeco-theme-child/*
+          mkdir -p ${{ secrets.DIR }}
+          rm -rf ${{ secrets.DIR }}/*
     - run: npm install node-sass
     - run: npm run build-css
     - name: SFTP Upload
@@ -41,6 +41,6 @@ jobs:
         port: ${{ secrets.PORT }}
         username: '${{ secrets.USERNAME }}'
         password: '${{ secrets.PASSWORD }}'
-        remoteDir: '/data/wordpress/htdocs/wp-content/themes/eeco-theme-child'
+        remoteDir: '${{ secrets.DIR }}'
         exclude: '.git/,node_modules/,.github/,package.json,package-lock.json,.gitignore'
         dryRun: false

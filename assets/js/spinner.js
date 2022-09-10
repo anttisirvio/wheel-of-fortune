@@ -1,5 +1,19 @@
 jQuery(document).ready( function($) {
     var d = new Date();
+
+    let alreadySpinned = false;
+
+    if (window.localStorage.getItem('lunch') !== 'undefined') {
+        var storage = JSON.parse(window.localStorage.getItem('lunch'));
+        var date1 = new Date(storage.date);
+        var date2 = new Date(d.toLocaleDateString());
+
+        if (date1.getTime() == date2.getTime()) {
+            alreadySpinned = true;
+            $('.result').html('Lounaspaikka tänään: <span style="color:'+storage.color+';">'+storage.place+'</span>');
+        }
+    }
+
     const sectors = [
         { color: "#1A1A1A", label: "Addis Ethiopian Kitchen" },
         { color: "#476055", label: "Ba Bu" },
@@ -87,6 +101,9 @@ jQuery(document).ready( function($) {
         const sector = sectors[getIndex()];
         ctx.canvas.style.transform = `rotate(${ang - PI / 2}rad)`;
         elSpin.textContent = !angVel ? "PYÖRÄYTÄ" : sector.label;
+        if (alreadySpinned) {
+            elSpin.textContent = "Olet jo pyöräyttänyt tänään"
+        }
         elSpin.style.background = sector.color;
     };
     
@@ -111,8 +128,12 @@ jQuery(document).ready( function($) {
             // SPIN END:
             if (angVel < angVelMin) {
                 isSpinning = false;
-                window.localStorage.setItem('lunchDate', d.toLocaleDateString());
-                window.localStorage.setItem('lunchPlace', sector.label);
+                const lunch = {
+                    date: d.toLocaleDateString(),
+                    place: sector.label,
+                    color: sector.color
+                }
+                window.localStorage.setItem('lunch', JSON.stringify(lunch));
                 $('.result').html('Lounaspaikka tänään: <span style="color:'+sector.color+'">'+sector.label+'</span>');
                 angVel = 0;
             }
@@ -129,6 +150,7 @@ jQuery(document).ready( function($) {
     };
     
     elSpin.addEventListener("click", () => {
+        if (alreadySpinned) return;
         if (isSpinning) return;
         isSpinning = true;
         isAccelerating = true;

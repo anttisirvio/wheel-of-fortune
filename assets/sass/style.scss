@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 .container {
     position: relative;
@@ -8,6 +9,8 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    background: rgb(33,156,181);
+    background: linear-gradient(90deg, rgba(33,156,181,1) 47%, rgba(0,212,255,1) 100%);
 }
 #wheelOfFortune {
     display: inline-flex;
