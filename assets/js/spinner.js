@@ -42,6 +42,7 @@ jQuery(document).ready( function($) {
         { color: "#FEA30B", label: "Pretty Boy Wingery" },
         { color: "#CAA051", label: "Ravintola Angelina" },
         { color: "#000000", label: "Ravintola Fame" },
+        { color: "#002855", label: "Salaattibuffet" },
         { color: "#51C2F0", label: "Sizzle Station" },
         { color: "#000", label: "Story" },
         { color: "#008D43", label: "Subway" },
