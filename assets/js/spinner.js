@@ -10,47 +10,47 @@ jQuery(document).ready( function($) {
 
         if (date1.getTime() == date2.getTime()) {
             alreadySpinned = true;
-            $('.result').html(storage.place).css('color', storage.color);
+            $('.result').html(storage.place + ' (<a href="'+storage.url+'" target="_blank">reittiohjeet</a>)').css('color', storage.color);
         }
     }
 
     const sectors = [
-        { color: "#1A1A1A", label: "Addis Ethiopian Kitchen" },
-        { color: "#476055", label: "Ba Bu" },
-        { color: "#f1c40f", label: "Bangkok 9" },
-        { color: "#EECDA6", label: "Brokadi" },
-        { color: "#8C2022", label: "Burgers & Wine" },
-        { color: "#BB9465", label: "Capperi" },
-        { color: "#F08E80", label: "Crazy Bing" },
-        { color: "#2FA753", label: "Delhi Rasoi" },
-        { color: "#F26754", label: "East Market" },
-        { color: "#E94A2E", label: "Fafa's" },
-        { color: "#000000", label: "Falafel Box" },
-        { color: "#012F6B", label: "Fazer Cafe" },
-        { color: "##ce9429", label: "Fredde's - Food & Fire" },
-        { color: "#73AA4E", label: "Friends & Brgrs" },
-        { color: "#E30613", label: "Hanko Sushi" },
-        { color: "#ee343b", label: "Hesburger" },
-        { color: "#133b5f", label: "Kalaliike & Bistro S. Wallin" },
-        { color: "#00D800", label: "Limone Ravintola" },
-        { color: "#212529", label: "Luckiefun's" },
-        { color: "#c5aa6c", label: "Mari's Treehouse" },
-        { color: "#2D9B87", label: "O'Learys" },
-        { color: "#74CEDE", label: "Onam" },
-        { color: "#A11211", label: "Pancho Villa" },
-        { color: "#C90013", label: "Pizza Hut" },
-        { color: "#FEA30B", label: "Pretty Boy Wingery" },
-        { color: "#CAA051", label: "Ravintola Angelina" },
-        { color: "#000000", label: "Ravintola Fame" },
-        { color: "#002855", label: "Salaattibuffet" },
-        { color: "#51C2F0", label: "Sizzle Station" },
-        { color: "#000", label: "Story" },
-        { color: "#008D43", label: "Subway" },
-        { color: "#CB2B30", label: "Teppanyaki" },
-        { color: "#6F9800", label: "The Avocado Cafeteria" },
-        { color: "#F79B2E", label: "TLB" },
-        { color: "#878787", label: "Tokumaru" },
-        { color: "#36A03F", label: "Tortilla House" }
+        { color: "#1A1A1A", label: "Addis Ethiopian Kitchen", url: "https://www.wayfinding.fi/tripla-web/tenant/376" },
+        { color: "#476055", label: "Ba Bu", url: "https://www.wayfinding.fi/tripla-web/tenant/210" },
+        { color: "#f1c40f", label: "Bangkok 9", url: "https://www.wayfinding.fi/tripla-web/tenant/196" },
+        { color: "#EECDA6", label: "Brokadi", url: "https://www.wayfinding.fi/tripla-web/tenant/216" },
+        { color: "#8C2022", label: "Burgers & Wine", url: "https://www.wayfinding.fi/tripla-web/tenant/380" },
+        { color: "#BB9465", label: "Capperi", url: "https://www.wayfinding.fi/tripla-web/tenant/183" },
+        { color: "#F08E80", label: "Crazy Bing", url: "https://www.wayfinding.fi/tripla-web/tenant/368" },
+        { color: "#2FA753", label: "Delhi Rasoi", url: "https://www.wayfinding.fi/tripla-web/tenant/218" },
+        { color: "#F26754", label: "East Market", url: "https://www.wayfinding.fi/tripla-web/tenant/288" },
+        { color: "#E94A2E", label: "Fafa's", url: "https://www.wayfinding.fi/tripla-web/tenant/93" },
+        { color: "#000000", label: "Falafel Box", url: "https://www.wayfinding.fi/tripla-web/tenant/217" },
+        { color: "#012F6B", label: "Fazer Cafe", url: "https://www.wayfinding.fi/tripla-web/tenant/95" },
+        { color: "##ce9429", label: "Fredde's - Food & Fire", url: "https://www.wayfinding.fi/tripla-web/tenant/299" },
+        { color: "#73AA4E", label: "Friends & Brgrs", url: "https://www.wayfinding.fi/tripla-web/tenant/101" },
+        { color: "#E30613", label: "Hanko Sushi", url: "https://www.wayfinding.fi/tripla-web/tenant/141" },
+        { color: "#ee343b", label: "Hesburger", url: "https://www.wayfinding.fi/tripla-web/tenant/146" },
+        { color: "#133b5f", label: "Kalaliike & Bistro S. Wallin", url: "https://www.wayfinding.fi/tripla-web/tenant/213" },
+        { color: "#00D800", label: "Limone Ravintola", url: "https://www.wayfinding.fi/tripla-web/tenant/338" },
+        { color: "#212529", label: "Luckiefun's", url: "https://www.wayfinding.fi/tripla-web/tenant/143" },
+        { color: "#c5aa6c", label: "Mari's Treehouse", url: "https://www.wayfinding.fi/tripla-web/tenant/186" },
+        { color: "#2D9B87", label: "O'Learys", url: "https://www.wayfinding.fi/tripla-web/tenant/201" },
+        { color: "#74CEDE", label: "Onam", url: "https://www.wayfinding.fi/tripla-web/tenant/122" },
+        { color: "#A11211", label: "Pancho Villa", url: "https://www.wayfinding.fi/tripla-web/tenant/301" },
+        { color: "#C90013", label: "Pizza Hut", url: "https://www.wayfinding.fi/tripla-web/tenant/155" },
+        { color: "#FEA30B", label: "Pretty Boy Wingery", url: "https://www.wayfinding.fi/tripla-web/tenant/403" },
+        { color: "#CAA051", label: "Ravintola Angelina", url: "https://www.wayfinding.fi/tripla-web/tenant/121" },
+        { color: "#000000", label: "Ravintola Fame", url: "https://www.wayfinding.fi/tripla-web/tenant/205" },
+        { color: "#002855", label: "Salaattibuffet", url: "https://www.wayfinding.fi/tripla-web/tenant/271" },
+        { color: "#51C2F0", label: "Sizzle Station", url: "https://www.wayfinding.fi/tripla-web/tenant/320" },
+        { color: "#000", label: "Story", url: "https://www.wayfinding.fi/tripla-web/tenant/168" },
+        { color: "#008D43", label: "Subway", url: "https://www.wayfinding.fi/tripla-web/tenant/139" },
+        { color: "#CB2B30", label: "Teppanyaki", url: "https://www.wayfinding.fi/tripla-web/tenant/405" },
+        { color: "#6F9800", label: "The Avocado Cafeteria", url: "https://www.wayfinding.fi/tripla-web/tenant/206" },
+        { color: "#F79B2E", label: "TLB", url: "https://www.wayfinding.fi/tripla-web/tenant/352" },
+        { color: "#878787", label: "Tokumaru", url: "https://www.wayfinding.fi/tripla-web/tenant/162" },
+        { color: "#36A03F", label: "Tortilla House", url: "https://www.wayfinding.fi/tripla-web/tenant/166" }
     ];
     
     // Generate random float in range min-max:
@@ -132,10 +132,12 @@ jQuery(document).ready( function($) {
                 const lunch = {
                     date: d.toLocaleDateString(),
                     place: sector.label,
-                    color: sector.color
+                    color: sector.color,
+                    url: sector.url
                 }
                 window.localStorage.setItem('lunch', JSON.stringify(lunch));
-                $('.result').html(sector.label).css('color', sector.color);
+
+                $('.result').html(sector.label + ' (<a href="'+sector.url+'" target="_blank">reittiohjeet</a>)').css('color', sector.color);
                 angVel = 0;
                 alreadySpinned = true;
             }

@@ -2,3 +2,5 @@
 config.rb
 assets/css*
 !assets/css/.gitkeep
+package-lock.json
+node_modules/
