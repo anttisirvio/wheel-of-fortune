@@ -14,7 +14,7 @@ jQuery(document).ready( function($) {
         }
     }
 
-    const sectors = [
+    let sectors = [
         { color: "#1A1A1A", label: "Addis Ethiopian Kitchen", url: "https://www.wayfinding.fi/tripla-web/tenant/376" },
         { color: "#476055", label: "Ba Bu", url: "https://www.wayfinding.fi/tripla-web/tenant/210" },
         { color: "#f1c40f", label: "Bangkok 9", url: "https://www.wayfinding.fi/tripla-web/tenant/196" },
@@ -53,6 +53,11 @@ jQuery(document).ready( function($) {
         { color: "#36A03F", label: "Tortilla House", url: "https://www.wayfinding.fi/tripla-web/tenant/166" }
     ];
     
+    // Shuffle restaurants
+    sectors = sectors.map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+
     // Generate random float in range min-max:
     const rand = (m, M) => Math.random() * (M - m) + m;
     
