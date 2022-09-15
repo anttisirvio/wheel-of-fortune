@@ -145,6 +145,9 @@ jQuery(document).ready( function($) {
                 $('.result').html(sector.label + ' (<a href="'+sector.url+'" target="_blank">reittiohjeet</a>)').css('color', sector.color);
                 angVel = 0;
                 alreadySpinned = true;
+                gtag('event', 'spin_result', {
+                    'restaurant': sector.label
+                });
             }
         }
     
@@ -164,6 +167,7 @@ jQuery(document).ready( function($) {
         isSpinning = true;
         isAccelerating = true;
         angVelMax = rand(0.25, 0.40);
+        gtag('event', 'spin_the_wheel');
     });
     
     // INIT!
