@@ -5,10 +5,8 @@ jQuery(document).ready( function($) {
 
     if (window.localStorage.getItem('lunch') && window.localStorage.getItem('lunch') !== 'undefined') {
         var storage = JSON.parse(window.localStorage.getItem('lunch'));
-        var date1 = new Date(storage.date);
-        var date2 = new Date(d.toLocaleDateString());
-
-        if (date1.getTime() == date2.getTime()) {
+        
+        if (storage.date == d.toLocaleDateString()) {
             alreadySpinned = true;
             $('.result').html(storage.place + ' (<a href="'+storage.url+'" target="_blank">reittiohjeet</a>)').css('color', storage.color);
         }
